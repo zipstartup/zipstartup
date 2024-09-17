@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipStartup - AI-Focused Product Management & Technology Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0062cc;
+            --secondary-color: #00a86b;
+            --accent-color: #ff7f50;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary-color);
+        }
+        header {
+            background-color: var(--background-color);
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        nav {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #e86a3e;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .service-item {
+            flex-basis: calc(33.333% - 20px);
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+        .testimonial {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .service-item {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ZipStartup</h1>
+            <p>AI-Focused Product Management & Technology Services for Early-Stage Startups</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="home">
+                <h2>Empowering AI Startups with Expert Product and Technology Leadership</h2>
+                <p>From 0 to 1 innovation across diverse industries - retail, automotive, mobility, fitness, and media.</p>
+                <p>ZipStartup provides the experienced guidance your early-stage AI startup needs to establish product strategy, build the right team, and implement effective processes - all without the commitment of a full-time executive.</p>
+                <a href="#contact" class="cta-button">Schedule a Free Consultation</a>
+            </section>
+
+            <section id="about">
+                <h2>About Tabrez Shaikh - Your AI Product and Technology Partner</h2>
+                <p>With over 12 years of experience reimagining user experiences and driving innovation, I bring a unique blend of product leadership and technical expertise to early-stage AI startups.</p>
+                <h3>Key Highlights:</h3>
+                <ul>
+                    <li>Ex-Google Product Leader and 2x Founder</li>
+                    <li>Specialized in 0 to 1 innovation across diverse industries</li>
+                    <li>Deep expertise in cloud, voice, vision, AI/ML, and generative AI</li>
+                    <li>Proven track record in product strategy, team building, and process implementation</li>
+                </ul>
+                <h3>Why Work With Me:</h3>
+                <ol>
+                    <li><strong>Hands-on Experience:</strong> From leading teams at Google and Telenav to driving innovation at startups like Parfait, I've been in the trenches and understand the challenges you face.</li>
+                    <li><strong>Technical Acumen:</strong> My background as an engineering leader and architect allows me to bridge the gap between product vision and technical implementation.</li>
+                    <li><strong>AI/ML Focus:</strong> With expertise in Large Language Models (LLM) and AI product management, I can help you leverage cutting-edge technologies effectively.</li>
+                    <li><strong>Startup-Centric Approach:</strong> I understand the volatility and resource constraints of early-stage startups and can provide tailored solutions that fit your needs and budget.</li>
+                </ol>
+            </section>
+
+            <section id="services">
+                <h2>Our Services</h2>
+                <div class="services">
+                    <div class="service-item">
+                        <h3>Product Strategy Development</h3>
+                        <ul>
+                            <li>Market analysis and positioning</li>
+                            <li>Feature prioritization and roadmap creation</li>
+                            <li>User experience optimization</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3>Technology Leadership</h3>
+                        <ul>
+                            <li>Team structure and hiring guidance</li>
+                            <li>Technical architecture review and optimization</li>
+                            <li>Agile process implementation</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3>AI/ML Integration</h3>
+                        <ul>
+                            <li>AI use case identification and validation</li>
+                            <li>ML model selection and integration strategy</li>
+                            <li>Data strategy and pipeline development</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3>OKR and Process Implementation</h3>
+                        <ul>
+                            <li>Goal setting and OKR framework implementation</li>
+                            <li>Metrics definition and tracking</li>
+                            <li>Continuous improvement processes</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3>Interim Product/Technology Leadership</h3>
+                        <ul>
+                            <li>Part-time CPO/CTO services</li>
+                            <li>Board and investor pitch preparation</li>
+                            <li>Technology due diligence support</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Engagement Models</h3>
+                <ul>
+                    <li><strong>Strategy Sprint:</strong> Intensive 2-week engagement to define product strategy and technology roadmap</li>
+                    <li><strong>Monthly Retainer:</strong> Ongoing advisory services with regular check-ins and on-demand support</li>
+                    <li><strong>Project-Based Consulting:</strong> Focused engagement on specific initiatives or challenges</li>
+                </ul>
+            </section>
+
+            <section id="testimonials">
+                <h2>Client Testimonials</h2>
+                <div class="testimonial">
+                    <p>"Tabrez's deep technical knowledge and expertise were key reasons we brought him onto our leadership team. His ability to connect product strategy with cutting-edge tech was invaluable."</p>
+                    <p><strong>- Ifueko Igbinedion, Founder and CTO @ Parfait</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"Tabrez is an outstanding Product Manager, and easily one of the most effective PM I have worked with. He always ensured that all stakeholders are aligned to the mission."</p>
+                    <p><strong>- Mikkin Patel, Engineering Manager at Google</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"Tabrez is a full stack product management pro. From strategy and ideation all the way down to UI/UX optimization, Tabrez brings strong know-how and intelligence to the table."</p>
+                    <p><strong>- John Ford, Chief Product Officer at EGYM</strong></p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Ready to take your AI startup to the next level? Let's connect and discuss how ZipStartup can help you achieve your goals.</p>
+                <ul>
+                    <li>Email: shaikhtabrez@gmail.com</li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/shaikhtabrez" target="_blank">www.linkedin.com/in/shaikhtabrez</a></li>
+                    <li>Phone: 301-332-8023</li>
+                </ul>
+                <p>Schedule a free 30-minute consultation to explore how we can work together to accelerate your startup's growth.</p>
+                <a href="#" class="cta-button">Schedule Consultation</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ZipStartup. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
