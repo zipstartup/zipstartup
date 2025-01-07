@@ -6,14 +6,21 @@
     <title>ZipStartup - AI-Focused Product Management & Technology Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #0062cc;
-            --secondary-color: #00a86b;
-            --accent-color: #ff7f50;
-            --text-color: #333;
-            --background-color: #f4f4f4;
-        }
-        body {
+        
+	:root {
+ 	    --primary-color: #2B6CB0;
+	    --secondary-color: #319795;
+	    --text-color: #1A202C;
+	    --background-color: #FEFEFE;
+	    --startup-color: #1A202C;
+	    --startup-color-hover: #C86A3E;
+
+  	    /* Primary accent color (Coral) */
+  	    --accent-color: #FF7F50;
+  	    --accent-color-hover: #E86A3E;
+	}
+
+	body {
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
@@ -67,6 +74,143 @@
         section {
             scroll-margin-top: 6rem; 
         }
+/* Hero Section Layout */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap; /* Ensures it adapts to smaller screens */
+  align-items: center; /* Vertically align text and image */
+  justify-content: space-between; /* Create space between text and image */
+ /* padding: 2rem 1rem;*/
+  max-width: 1200px;
+  margin: 0 auto; /* Center the section */
+  gap: 2rem;
+}
+
+
+/* Left Column */
+.hero-left {
+  flex: 1;
+  max-width: 50%; /* Take up more space for main content */
+}
+
+/* Content (Text & CTA) */
+.hero-content {
+  flex: 1; /* Take up equal space as the image */
+  max-width: 50%; /* Restrict width to prevent overly wide text */
+  text-align: left; /* Align text to the left */
+  padding-right: 1rem; /* Add spacing between text and image */
+}
+/* Hero Image */
+.hero-image-container {
+  margin-top: 1.5rem;
+}
+
+.hero-image {
+  width: 100%; /* Ensure image scales properly */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+  }
+
+  .hero-left,
+  .hero-right {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .hero-right {
+    margin-top: 1.5rem;
+    border-left: none; /* Remove separator for smaller screens */
+    text-align: center;
+  }
+}
+
+	/* Slogan (Main Headline) */
+	.hero-slogan {
+	  font-size: 2rem; /* Adjust for larger text */
+	  font-weight: 700;
+	  color: var(--primary-color); /* e.g., blue: #2B6CB0 */
+	  margin-bottom: 1rem;
+	}
+
+	/* Subtext (Description) */
+	.hero-subtext {
+	  font-size: 1.125rem; /* Slightly smaller than the headline */
+	  line-height: 1.8;
+	  color: var(--text-color); /* Neutral text color: #1A202C */
+	  margin-bottom: .75rem;
+	}
+
+.hero-subtext u {
+  text-decoration: underline; /* Emphasize key phrase */
+  text-decoration-thickness: 2px; /* Thicker underline for better visibility */
+  font-weight: 600; /* Make it stand out more */
+}
+
+.hero-subtext strong {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1rem; /* Slightly smaller than subtext */
+  color: var(--primary-color); /* Match headline color */
+}
+
+/* Right Column (Founder’s Note) */
+.hero-right {
+  flex: 1;
+  max-width: 50%; /* Larger width for the image */
+  text-align: left;
+  font-family: 'Georgia', serif; /* Optional: Add a distinct font */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  padding-left: 1rem;
+  border-left: 2px solid #E7EAEC; /* Optional: Add a vertical separator */
+}
+
+.founder-note {
+  font-style: italic;
+}
+
+.founder-note strong {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+
+/* CTA Container */
+.cta-container {
+    margin-top: 1.5rem; /* Add more space above the button */
+}
+.cta-note {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+
+}
+	.cta-lead {
+	    margin-bottom: 1rem;
+	    font-weight: 600;
+	}
+
+	.consultation-note {
+	    margin-top: 1rem;
+	    font-size: 0.875rem;
+	    color: var(--secondary-color); /* Muted green */
+	    font-style: italic;
+	}
+
+
 	html {
 		    scroll-behavior: smooth;
 	            scroll-padding-top: 6rem; /* Adjust as needed */
@@ -87,7 +231,6 @@
             margin-right: 40px;
         }
         nav ul li.logo a {
-            color: var(--primary-color);
             font-family: 'Roboto', sans-serif;
             font-size: 1.75rem;
             font-weight: 500;
@@ -96,35 +239,63 @@
             gap: 0.5rem;
             text-decoration: none;
         }
-        nav ul li.logo .zip {
-            color: var(--accent-color);
-            font-weight: 500;
-        }
+
+	nav ul li.logo .brand {
+	  color: var(--accent-color);
+	  font-weight: 500;
+	  transition: color 0.3s ease; /* Smooth transition */
+	}
+
         nav ul li.logo .startup {
-            color: #333;
-            font-weight: 500;
+	  color: var(--startup-color);
+	  transition: color 0.3s ease; /* Smooth transition */
         }
+
+
+	/* If *any* part of the link (a) is hovered, 
+	   change the color of both .zip & .startup. */
+	nav ul li.logo a:hover .brand,
+	nav ul li.logo a:hover .startup {
+	  color: var(--startup-color-hover);
+	  transition: color 0.3s ease;
+	}
+
+	
         nav ul li.logo svg {
             height: 1.5rem;
             width: 1.5rem;
         }
-        nav ul li a {
+
+	/* Default (no hover) */
+	nav ul li.logo a svg {
+	    transition: opacity 0.3s ease, filter 0.3s ease;
+	}
+
+	/* Hover: slightly reduce brightness & add transparency */
+	nav ul li.logo a:hover svg {
+	    opacity: 0.5;         
+	    filter: brightness(0.5);
+	}
+
+        nav ul li:not(.logo) a {
             color: var(--text-color);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        nav ul li a:hover {
+        nav ul li:not(.logo) a:hover {
             color: var(--accent-color);
         }
         .cta-button {
             display: inline-block;
             background-color: var(--accent-color);
             color: #fff;
-            padding: 12px 24px;
+	    width: auto; /* Adjust width for mobile */
+	    padding: 0.75rem 1.5rem; 
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
+	    cursor: pointer;
             transition: background-color 0.3s ease;
         }
         .cta-button:hover {
@@ -200,7 +371,7 @@
                             <path d="M2.5 21.5c0 0 0.5-2 1.5-3c0.8-0.8 1.5-1.2 1.5-1.2" 
                                   stroke="var(--accent-color)" stroke-width="1" fill="none" opacity="0.6"/>
                         </svg>
-                        <span class="zip">Zip</span><span class="startup">Startup</span>
+                        <span class="brand">Zip<span class="startup">Startup</span></span>
                     </a>
                 </li>
                 <li><a href="#about">About</a></li>
@@ -214,17 +385,32 @@
     <main>
         <div class="container">
             <div id="home"></div>
-            <section>
-                <h2>Empowering AI Startups with Expert Product and Technology Leadership</h2>
-                <p>Guidance your AI startup needs to formulate product strategy, build a strong team, and deliver results - all without the cost of a full-time executive.</p>
-                <a href="https://calendly.com/tabrez-zipstartup/30min" class="cta-button" target="_blank">Schedule a Consultation</a>
-                <span class="free-consultation">Your 30-minute consultation is completely free!</span>
-            </section>
+
+<section class="hero-section">
+  <div class="hero-left">
+    <h2 class="hero-slogan">We help AI Startup Founders</h2>
+
+    <p class="hero-subtext">
+      Get unstuck on anything from product strategy to execution.
+    </p>
+
+    <div class="cta-container">
+       <a href="https://calendly.com/tabrez-zipstartup/30min" class="cta-button" target="_blank">Schedule a Consultation</a>
+       <p class="consultation-note">One FREE call to diagnose a product challenge of your choice.</p>
+    </div>
+</div>
+  <div class="hero-right">
+    <div class="hero-image-container">
+      <img src="./hero-image.png" alt="Hero Image" class="hero-image">
+    </div>
+  </div>
+</section>
+
 
             <div id="about"></div>
             <section>
-                <h2>About Tabrez Shaikh - Your AI Product and Technology Partner</h2>
-                <p>With over 12 years of experience reimagining user experiences and driving innovation, I bring a unique blend of product leadership and technical expertise to early-stage AI startups.</p>
+                <h2>About Tabrez Shaikh</h2>
+                <p>With over 12 years of experience reimagining user experiences and driving innovation, Tabrez bringa unique blend of product leadership and technical expertise to early-stage AI startups.</p>
                 <h3>Key Highlights:</h3>
                 <ul>
                     <li>Ex-Google Product Leader and 2x Founder</li>
@@ -232,7 +418,7 @@
                     <li>Deep expertise in cloud, voice, vision, AI/ML, and generative AI</li>
                     <li>Proven track record in product strategy, team building, and process implementation</li>
                 </ul>
-                <h3>Why Work With Me:</h3>
+                <h3>Why Work With Tabrez:</h3>
                 <ol>
                     <li><strong>Hands-on Experience:</strong> From leading teams at Google and Telenav to driving innovation at startups like Parfait, I've been in the trenches and understand the challenges you face.</li>
                     <li><strong>Technical Acumen:</strong> My background as an engineering leader and architect allows me to bridge the gap between product vision and technical implementation.</li>
