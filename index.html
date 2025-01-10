@@ -9,8 +9,9 @@
         
 	:root {
  	    --primary-color: #2B6CB0;
-	    --secondary-color: #319795;
+	    --secondary-color:#E3F2FD; /*#E8F5E9;  #319795;*/
 	    --text-color: #1A202C;
+	    --secondary-text-color:#319795;
 	    --background-color: #FEFEFE;
 	    --startup-color: #1A202C;
 	    --startup-color-hover: #C86A3E;
@@ -33,6 +34,7 @@
             margin: 0 auto;
             overflow: hidden;
             max-width: 1200px;
+            min-width: 370px;
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Roboto', sans-serif;
@@ -73,61 +75,90 @@
         /* Add scroll margin and padding to sections */
         section {
             scroll-margin-top: 6rem; 
+	    padding: 0px 20px;
         }
-/* Hero Section Layout */
-.hero-section {
-  display: flex;
-  flex-wrap: wrap; /* Ensures it adapts to smaller screens */
-  align-items: center; /* Vertically align text and image */
-  justify-content: space-between; /* Create space between text and image */
-  max-width: 1200px;
-  margin: 0 auto; /* Center the section */
-  gap: 1rem;
-}
+
+	/* Hero Section Layout */
+
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            align-items: center; /* Vertically align content */
+            justify-items: start; /* Horizontally align content */
+            max-width: 1200px;
+            margin: 0 auto; /* Center the section */
+            gap: 1rem;
+        }
 
 
-/* Left Column */
-.hero-left {
-  flex: 1;
-  max-width: 50%; /* Take up more space for main content */
-}
 
-/* Content (Text & CTA) */
-.hero-content {
-  flex: 1; /* Take up equal space as the image */
-  max-width: 50%; /* Restrict width to prevent overly wide text */
-  text-align: left; /* Align text to the left */
-  padding-right: 1rem; /* Add spacing between text and image */
-}
-/* Hero Image */
-.hero-image-container {
-  margin-top: 3rem;
-}
+	/* Hero Image */
+        .hero-image-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 1rem 0;
+            padding:1rem 0;
+        }
 
-.hero-image {
-  width: 100%; /* Ensure image scales properly */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: Rounded corners */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
-}
+	.hero-image {
+	  width: 97%; /* Ensure image scales properly */
+	  height: auto; /* Maintain aspect ratio */
+	  display: block;
+	  border-radius: 8px; /* Optional: Rounded corners */
+	  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+	}
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-  }
+	/* Responsive Adjustments */
+        @media (max-width: 1000px) {
+            .container {
+                width: 92%;
+                padding: 0 1rem;
+            }
+            
+            .services, .hero-section {
+		margin: 0;
+        	text-align: left; /* Align content to the left by default */
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
 
-  .hero-left,
-  .hero-right {
-    max-width: 100%;
-    padding: 0;
-  }
+	    .hero-image-container{
+		text-align: left;
+		align-content: left;
+		margin: 0;
+	    }
+            nav .container {
+                width: 100%;
+                padding: 0.5rem 1rem;
+            }
 
-  .hero-right {
-    border-left: none; /* Remove separator for smaller screens */
-    text-align: center;
-  }
-}
+            nav ul {
+                justify-content: space-between;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            nav ul li.logo {
+                margin-right: 20px;
+            }
+        }
+
+
+        @media (min-width: 769px) and (max-width: 1199px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+
 
 	/* Slogan (Main Headline) */
 	.hero-slogan {
@@ -144,45 +175,26 @@
 	  margin-bottom: .75rem;
 	}
 
-.hero-subtext u {
-  text-decoration: underline; /* Emphasize key phrase */
-  text-decoration-thickness: 2px; /* Thicker underline for better visibility */
-  font-weight: 600; /* Make it stand out more */
-}
+	.hero-subtext u {
+	  text-decoration: underline; /* Emphasize key phrase */
+	  text-decoration-thickness: 2px; /* Thicker underline for better visibility */
+	  font-weight: 600; /* Make it stand out more */
+	}
 
-.hero-subtext strong {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 700;
-  font-size: 1rem; /* Slightly smaller than subtext */
-  color: var(--primary-color); /* Match headline color */
-}
-
-/* Right Column (Image) */
-.hero-right {
-  flex: 1;
-  max-width: 50%; /* Larger width for the image */
-  text-align: left;
-  font-family: 'Georgia', serif; /* Optional: Add a distinct font */
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-color);
-  padding-left: 1rem;
-  border-left: 2px solid #E7EAEC; /* Optional: Add a vertical separator */
-}
+	.hero-subtext strong {
+	  display: block;
+	  margin-top: 1rem;
+	  font-weight: 700;
+	  font-size: 1rem; /* Slightly smaller than subtext */
+	  color: var(--primary-color); /* Match headline color */
+	}
 
 
-/* CTA Container */
-.cta-container {
-    margin-top: 1.5rem; /* Add more space above the button */
-}
-.cta-note {
-  font-size: 0.875rem;
-  font-style: italic;
-  color: var(--secondary-color);
-  margin-top: 0.5rem;
 
-}
+	/* CTA Container */
+	.cta-container {
+	    margin-top: 1.5rem; /* Add more space above the button */
+	}
 	.cta-lead {
 	    margin-bottom: 1rem;
 	    font-weight: 600;
@@ -191,7 +203,7 @@
 	.consultation-note {
 	    margin-top: 1rem;
 	    font-size: 0.875rem;
-	    color: var(--secondary-color); /* Muted green */
+	    color: var(--secondary-text-color); /* Muted green */
 	    font-style: italic;
 	}
 
@@ -289,7 +301,7 @@
             display: block;
             margin-top: 10px;
             font-style: italic;
-            color: var(--secondary-color);
+            color: var(--secondary-text-color);
         }
         .services {
             display: grid;
@@ -306,32 +318,58 @@
         .service-item:hover {
             transform: translateY(-5px);
         }
-        .testimonial {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 2rem;
-            border-radius: 5px;
-            margin-top: 2rem;
-        }
+
+
+	.testimonial {
+            background-color: var(--secondary-color); /* Soft blue */
+            color: var(--text-color);
+	    padding: 2.5rem;
+	    border-radius: 12px;
+	    margin-top: 2rem;
+	    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+	    border: 1px solid rgba(0, 0, 0, 0.05);
+	    position: relative;
+	}
+
+	.testimonial:before {
+	    content: "“";
+	    font-family: Georgia, serif;
+	    font-size: 4rem;
+	    color: rgba(43, 108, 176, 0.3); /* Faded primary blue */
+	    position: absolute;
+	    top: -10px;
+	    left: 15px;
+	}
+
+	.testimonial:after {
+	    content: "”";
+	    font-family: Georgia, serif;
+	    font-size: 4rem;
+	    color: rgba(43, 108, 176, 0.3);
+	    position: absolute;
+	    bottom: -10px;
+	    right: 15px;
+	}
+
+	.testimonial p {
+	    font-size: 1.2rem;
+	    line-height: 1.8;
+	    margin: 0 0 1rem;
+	}
+
+	.testimonial p strong {
+	    font-weight: bold;
+	    font-size: 1rem;
+	    color: #2B6CB0; /* Darker blue for emphasis */
+	}
+
+
         footer {
             background-color: var(--primary-color);
             color: #fff;
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-            .services {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (min-width: 1200px) {
-            .services {
-                grid-template-columns: repeat(3, 1fr);
-            }
         }
     </style>
 </head>
@@ -372,14 +410,11 @@
 
 <section class="hero-section">
   <div class="hero-left">
-    <h2 class="hero-slogan">We help AI Startup Founders</h2>
-    <p class="hero-subtext">
-     Level up product strategy and execution. 
-    </p>
+    <h2 class="hero-slogan">Let’s Build Winning Products Through Strategic Innovation and AI.</h2>
 
     <div class="cta-container">
        <a href="https://calendly.com/tabrez-zipstartup/30min" class="cta-button" target="_blank">Schedule a Consultation</a>
-       <p class="consultation-note">Your complimentary 30-minute product advice session.</p>
+       <p class="consultation-note">Complimentary 30-minute product advice session.</p>
     </div>
 </div>
   <div class="hero-right">
@@ -392,8 +427,8 @@
 
             <div id="about"></div>
             <section>
-                <h2>About Tabrez Shaikh</h2>
-                <p>With over 12 years of experience reimagining user experiences and driving innovation, Tabrez bringa unique blend of product leadership and technical expertise to early-stage AI startups.</p>
+                <h2>About</h2>
+                <p>ZipStartup was founded by Tabrez Shaikh, a solopreneur with more than two decades of experience driving innovation. He's on a mission to help AI startups disrupt the world as we know it.</p>
                 <h3>Key Highlights:</h3>
                 <ul>
                     <li>Ex-Google Product Leader and 2x Founder</li>
@@ -467,28 +502,31 @@
             <section>
                 <h2>Testimonials</h2>
                 <div class="testimonial">
-                    <p>"Tabrez's deep technical knowledge and expertise were key reasons we brought him onto our leadership team. His ability to connect product strategy with cutting-edge tech was invaluable."</p>
+                    <p>Tabrez's deep technical knowledge and expertise were key reasons we brought him onto our leadership team. His ability to connect product strategy with cutting-edge tech was invaluable.</p>
                     <p><strong>- Ifueko Igbinedion, Founder and CTO @ Parfait</strong></p>
                 </div>
                 <div class="testimonial">
-                    <p>"Tabrez is an outstanding Product Manager, and easily one of the most effective PM I have worked with. He always ensured that all stakeholders are aligned to the mission."</p>
+                    <p>Tabrez is an outstanding Product Manager, and easily one of the most effective PM I have worked with. He always ensured that all stakeholders are aligned to the mission.</p>
                     <p><strong>- Mikkin Patel, Engineering Manager at Google</strong></p>
                 </div>
                 <div class="testimonial">
-                    <p>"Tabrez is a full stack product management pro. From strategy and ideation all the way down to UI/UX optimization, Tabrez brings strong know-how and intelligence to the table."</p>
+                    <p>Tabrez is a full stack product management pro. From strategy and ideation all the way down to UI/UX optimization, Tabrez brings strong know-how and intelligence to the table.</p>
                     <p><strong>- John Ford, Chief Product Officer at EGYM</strong></p>
                 </div>
+		    <p style="text-align: center; margin-top: 1.5rem; font-size: 1rem;">
+			<em>These are a few recommendations for Tabrez Shaikh. See more on 
+			<a href="https://www.linkedin.com/in/shaikhtabrez" target="_blank" style="color: #2B6CB0; text-decoration: none; font-weight: bold;">LinkedIn</a>.
+			</em>
+		    </p>
             </section>
 
             <div id="contact"></div>
             <section>
                 <h2>Contact Us</h2>
-                <p>Ready to take your AI startup to the next level? Let's connect and discuss how ZipStartup can help you achieve your goals.</p>
-                <ul>
-                    <li>LinkedIn: <a href="https://www.linkedin.com/in/shaikhtabrez" target="_blank">www.linkedin.com/in/shaikhtabrez</a></li>
-                </ul>
-                <p>Schedule a free 30-minute consultation to explore how we can work together to accelerate your startup's growth.</p>
+                <p>Ready to take your AI startup to the next level?</p> 
+		<p>Let's connect and discuss how we can help to you achieve your goals.</p>
                 <a href="https://calendly.com/tabrez-zipstartup/30min" class="cta-button" target="_blank">Schedule Free Consultation</a>
+	        <p class="consultation-note">Complimentary 30-minute product advice session.</p>
             </section>
         </div>
     </main>
