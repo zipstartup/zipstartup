@@ -108,11 +108,67 @@
 	  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
 	}
 
+
+	/* About section */
+        .credentials-line {
+            text-align: center;
+            margin: 0.75rem 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .credentials-line span {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .credentials-line .separator {
+            margin: 0 0.75rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .profile-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .expertise-box {
+            background-color: var(--background-color);
+            padding: 2rem;
+            border-radius: 12px;
+            min-height: 280px;
+        }
+
+
 	/* Responsive Adjustments */
         @media (max-width: 1000px) {
             .container {
                 width: 92%;
                 padding: 0 1rem;
+            }
+
+            .top-grid, .bottom-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .credentials-line {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .credentials-line .separator {
+                display: none;
+            }
+
+            .profile-photo {
+                width: 180px;
+                height: 180px;
             }
             
             .services, .hero-section {
@@ -363,6 +419,11 @@
 	    color: #2B6CB0; /* Darker blue for emphasis */
 	}
 
+	name {
+	    font-weight:bold;
+	    color: #2B6CB0; /* Darker blue for emphasis */
+	}
+
 
         footer {
             background-color: var(--primary-color);
@@ -426,24 +487,62 @@
 
 
             <div id="about"></div>
-            <section>
-                <h2>About</h2>
-                <p>ZipStartup was founded by Tabrez Shaikh, a solopreneur with more than two decades of experience driving innovation. He's on a mission to help AI startups disrupt the world as we know it.</p>
-                <h3>Key Highlights:</h3>
-                <ul>
-                    <li>Ex-Google Product Leader and 2x Founder</li>
-                    <li>Specialized in 0 to 1 innovation across diverse industries</li>
-                    <li>Deep expertise in cloud, voice, vision, AI/ML, and generative AI</li>
-                    <li>Proven track record in product strategy, team building, and process implementation</li>
-                </ul>
-                <h3>Why Work With Tabrez:</h3>
-                <ol>
-                    <li><strong>Hands-on Experience:</strong> From leading teams at Google and Telenav to driving innovation at startups like Parfait, I've been in the trenches and understand the challenges you face.</li>
-                    <li><strong>Technical Acumen:</strong> My background as an engineering leader and architect allows me to bridge the gap between product vision and technical implementation.</li>
-                    <li><strong>AI/ML Focus:</strong> With expertise in Large Language Models (LLM) and AI product management, I can help you leverage cutting-edge technologies effectively.</li>
-                    <li><strong>Startup-Centric Approach:</strong> I understand the volatility and resource constraints of early-stage startups and can provide tailored solutions that fit your needs and budget.</li>
-                </ol>
-            </section>
+        <section>
+            <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">About ZipStartup</h2>
+            
+            <div style="margin-bottom: 3rem;">
+                <p style="font-size: 1.25rem; line-height: 1.6;">
+                    <span style="color: var(--primary-color); font-weight: 600;">Tabrez Shaikh</span> founded ZipStartup to support AI startups in their mission to disrupt industries.
+                </p>
+            </div>
+            
+            <!-- Top Row: Photo + Credentials and Areas of Expertise -->
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 2.5rem; align-items: start; margin-bottom: 3.5rem;" class="top-grid">
+                <!-- Left: Photo and Credentials -->
+                <div style="display: flex; flex-direction: column; justify-content: flex-start;">
+                    <img src="./founder-tabrez.jpeg" alt="Tabrez Shaikh" class="profile-photo">
+                    
+                    <div class="credentials-line" style="display: flex; justify-content: center; align-items: center;">
+                        <span>Tabrez Shaikh</span>
+                        <span class="separator">|</span>
+                        <span>ex-Google Product Leader</span>
+                        <span class="separator">|</span>
+                        <span>2x Startup Founder</span>
+                    </div>
+                </div>
+                
+                <!-- Right: Areas of Expertise -->
+                <div class="expertise-box">
+                    <h4 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.2rem;">Areas of Expertise</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                            <span style="color: var(--accent-color); margin-right: 0.75rem;">▸</span>Product Strategy & Innovation
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                            <span style="color: var(--accent-color); margin-right: 0.75rem;">▸</span>AI/ML Product Development
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                            <span style="color: var(--accent-color); margin-right: 0.75rem;">▸</span>Technical Leadership
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                            <span style="color: var(--accent-color); margin-right: 0.75rem;">▸</span>Startup Scaling
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Row: Word from Tabrez -->
+            <div style="background-color: #EBF4FF; padding: 2.5rem; border-radius: 12px;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">A Word from Tabrez</h3>
+                <p style="margin-bottom: 1.5rem;">I've been in your shoes. As a two-time founder,I know firsthand that <strong>seasoned product talent is often tied up at tech giants or too expensive for early-stage startups</strong>.</p>
+                
+                <p style="margin-bottom: 1.5rem;">That's why <strong>I created ZipStartup</strong>. We help founders navigate critical product decisions without the cost of a full-time executive. Recently, <strong>we helped a Series A AI startup pivot their core offering</strong>, enabling them to validate B2B channels within <strong>6 months</strong>.</p> 
+                
+                <p>Read about their experience below and <strong>book your complimentary product advice session today</strong>.</p>
+                
+                <p style="margin-top: 2rem; text-align: right; font-style: italic;">- Tabrez</p>
+            </div>
+        </section>
 
             <div id="services"></div>
             <section>
@@ -453,48 +552,49 @@
                         <h3>Product Strategy Development</h3>
                         <ul>
                             <li>Market analysis and positioning</li>
-                            <li>Feature prioritization and roadmap creation</li>
-                            <li>User experience optimization</li>
+                            <li>Product principles formulation</li>
+                            <li>Mission & vision development</li>
                         </ul>
                     </div>
                     <div class="service-item">
-                        <h3>Technology Leadership</h3>
+                        <h3>Product Strategy Execution</h3>
                         <ul>
-                            <li>Team structure and hiring guidance</li>
-                            <li>Technical architecture review and optimization</li>
-                            <li>Agile process implementation</li>
+                            <li>Goal setting and OKRs implementation</li>
+                            <li>Metrics definition and tracking</li>
+                            <li>Product & UX reviews</li>
                         </ul>
                     </div>
                     <div class="service-item">
-                        <h3>AI/ML Integration</h3>
+                        <h3>AI Enablement</h3>
                         <ul>
                             <li>AI use case identification and validation</li>
-                            <li>ML model selection and integration strategy</li>
-                            <li>Data strategy and pipeline development</li>
+                            <li>ML model selection and data strategy</li>
+                            <li>Human experience and alignment</li>
                         </ul>
                     </div>
                     <div class="service-item">
-                        <h3>OKR and Process Implementation</h3>
+                        <h3>Technical Leadership</h3>
                         <ul>
-                            <li>Goal setting and OKR framework implementation</li>
-                            <li>Metrics definition and tracking</li>
-                            <li>Continuous improvement processes</li>
+                            <li>Team structure and hiring guidance</li>
+                            <li>Technical architecture optimization</li>
+                            <li>Stability & performance enhancement</li>
                         </ul>
                     </div>
                     <div class="service-item">
-                        <h3>Interim Product/Technology Leadership</h3>
+                        <h3>Business Leadership</h3>
                         <ul>
-                            <li>Part-time CPO/CTO services</li>
+                            <li>Strategy and stakeholder alignment</li>
                             <li>Board and investor pitch preparation</li>
-                            <li>Technology due diligence support</li>
+                            <li>Product Led Growth</li>
                         </ul>
                     </div>
                 </div>
-                <h3>Engagement Models</h3>
+                <p><strong>Engagement Models</strong></p>
+		<p>The scope, duration, and cost of each engagement is tailored to your unique needs but here are some common engagement models we recommend:</p>
                 <ul>
-                    <li><strong>Strategy Sprint:</strong> Intensive 2-week engagement to define product strategy and technology roadmap</li>
-                    <li><strong>Monthly Retainer:</strong> Ongoing advisory services with regular check-ins and on-demand support</li>
-                    <li><strong>Project-Based Consulting:</strong> Focused engagement on specific initiatives or challenges</li>
+                    <li><strong>Strategy Sprints:</strong> Intensive 2-week engagements to collaborate on critical matters such as strategy, planning,roadmaps, or reviews</li>
+                    <li><strong>Coaching:</strong> Ongoing advisory services with weekly/monthly/quarterly check-ins</li>
+                    <li><strong>Project-Based Consulting:</strong> Focused engagement for achieving specific outcomes over mutually agreed period</li>
                 </ul>
             </section>
 
